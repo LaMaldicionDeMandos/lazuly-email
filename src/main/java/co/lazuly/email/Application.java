@@ -8,7 +8,6 @@ import com.google.common.collect.Lists;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Bean;
@@ -32,7 +31,6 @@ import static org.springframework.http.MediaType.ALL;
  * Created by boot on 9/5/17.
  */
 @SpringBootApplication
-@EnableAutoConfiguration
 @ComponentScan
 @EnableEurekaClient
 public class Application extends WebMvcConfigurerAdapter {
