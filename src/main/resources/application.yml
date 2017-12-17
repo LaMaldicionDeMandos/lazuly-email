@@ -21,7 +21,7 @@ mailjet:
   apiKey: ${MAILJET_API}
   secret: ${MAILJET_SECRET}
   from:
-    email: pasutmarcelo@gmail.com
+    email: mpasut@wolla.com.ar
     name: Lázuly
 ---
 spring:
