@@ -45,6 +45,7 @@ public class SecretFilter extends GenericFilterBean {
     private void doFilter(final RequestWrapper request) throws AuthenticationException {
         String header = request.getHeader(SECRET_HEADER);
         log.info("Secret header: {}", header);
+        log.info("Secret local: {}", secret);
         if (!secret.equals(header)) {
             throw new AuthenticationException("Invalid secret.");
         }
