@@ -1,5 +1,7 @@
 package co.lazuly.email.filters;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.filter.GenericFilterBean;
 
 import javax.security.sasl.AuthenticationException;
@@ -15,6 +17,7 @@ import java.io.IOException;
  * Created by boot on 14/12/2017.
  */
 public class SecretFilter extends GenericFilterBean {
+    private final static Logger log = LoggerFactory.getLogger(SecretFilter.class);
     private final static String SECRET_HEADER = "X-Authorization-Secret";
 
     private final String secret;
@@ -41,7 +44,7 @@ public class SecretFilter extends GenericFilterBean {
 
     private void doFilter(final RequestWrapper request) throws AuthenticationException {
         String header = request.getHeader(SECRET_HEADER);
-
+        log.info("Secret header: {}", header);
         if (!secret.equals(header)) {
             throw new AuthenticationException("Invalid secret.");
         }
